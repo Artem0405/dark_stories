@@ -81,10 +81,15 @@ class _GameScreenState extends State<GameScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(_currentStory.category),
-        centerTitle: true,
-        backgroundColor: Colors.transparent,
-        elevation: 0,
+        title: Hero(
+          // Тег должен быть уникальным для каждого элемента.
+          // Используем ID истории, чтобы он был уникальным.
+          tag: 'category_title_${_currentStory.id}',
+          child: Material(
+            color: Colors.transparent,
+            child: Text(_currentStory.category),
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(24.0),
