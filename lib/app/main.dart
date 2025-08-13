@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       ),
 
       // Указываем, какой экран будет домашним
-      home: const HomeScreen(),
+      home: HomeScreen(),
     );
   }
 }

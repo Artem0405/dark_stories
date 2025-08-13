@@ -41,8 +41,11 @@ class HomeScreen extends StatelessWidget {
       Navigator.push(
         context,
         MaterialPageRoute(
-          // Передаем выбранную историю на игровой экран через конструктор.
-          builder: (context) => GameScreen(story: randomStory),
+          // Передаем весь список и первую случайную историю
+          builder: (context) => GameScreen(
+            allStories: allStories,
+            initialStory: randomStory,
+          ),
         ),
       );
     } catch (e) {
